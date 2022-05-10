@@ -79,6 +79,16 @@ data "aws_key_pair" "ec2-key-pair-mySandboxInstance" {
 # to hook up a file
 module "eip" {
   source  = "./modules/eip"
-  
+  instanceID = aws_instance.mySandboxInstance.id
 }
 
+module "website_s3_bucket" {
+  source = "./modules/aws-s3-static-website-bucket"
+
+  bucket_name = "andrewsBucket-${timestamp()}"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}

@@ -26,3 +26,9 @@ Now in command line I can connect via ssh. Can also connect via console connect.
 ///////////////////////////////////
 
 it's not all or nothing. if some resources fail, it won't stop other resources.
+
+//////////////////////////////////
+.terraform folder is auto-generated after apply? or plan? or init?
+
+/////////////////////////////////////
+terraform.tfvars only works for root module, not child module. have to get variables from the parent.
