@@ -22,3 +22,7 @@ ssh -i "ec2.pem" ubuntu@ec2-54-151-8-143.us-west-1.compute.amazonaws.com
 Error says connection time out. Can't connect through aws console either. 
 So I manually edited inbound rules of the security group to allow ssh, http, and https.
 Now in command line I can connect via ssh. Can also connect via console connect.
+
+///////////////////////////////////
+
+it's not all or nothing. if some resources fail, it won't stop other resources.

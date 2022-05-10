@@ -1,3 +1,3 @@
 output "instanceID" {
-  value = aws_instance.portfolio-1.id
+  value = aws_instance.mySandboxInstance.id
 }
