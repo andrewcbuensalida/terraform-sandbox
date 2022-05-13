@@ -4,7 +4,7 @@ for terraform cloud
 https://learn.hashicorp.com/tutorials/terraform/aws-remote?in=terraform/aws-get-started
 
 
-workflow: just push or pr to remote master in gh, terraform cloud should detect changes then auto apply.
+workflow: just push or pr to remote master in gh, terraform cloud should detect changes then auto apply. (if using the vcs to cloud method. the other method is cli to cloud. another method is straight cli (no cloud) method)
 
 the other workflow is, 
     terraform apply
@@ -32,3 +32,26 @@ it's not all or nothing. if some resources fail, it won't stop other resources.
 
 /////////////////////////////////////
 terraform.tfvars only works for root module, not child module. have to get variables from the parent.
+
+////////////////////////////////////////
+only root output will be display when running apply.
+the use of the output in a child module is so the parent could access data with module.<child module>...
+sibling modules cant access outputs directly
+
+/////////////////////////////////////////
+there's two ways of splitting prod from dev
+1. have them in separate folders
+2. difference workspaces
+
+///////////////////////////////////
+when rearranging modules or renaming, by default, terraform will destroy and recreate the resource. if you dont want that to happen, put it in a moved block.
+
+
+//////////////////
+if the resource has count, the output is a list
+if the resource has for_each, the output is an object
+
+
+//////////////////
+terraform fmt -recursive
+is like prettier

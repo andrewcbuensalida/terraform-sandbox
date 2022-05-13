@@ -1,4 +1,5 @@
 # Terraform configuration
+# no provider block is needed because it is inherited from parent
 
 resource "aws_s3_bucket" "s3_bucket" {
   bucket = var.bucket_name
